@@ -1,0 +1,149 @@
+.wrap {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  padding: 96px 48px;
+}
+img {
+    object-fit: contain;
+}
+
+.vase-left {
+  display: grid;
+  min-height: 0;
+}
+.vase-right {
+  display: grid;
+  gap: 12px;
+  min-height: 0;
+}
+.vase-right > div {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  min-height: 0;
+}
+.box {
+  position: relative;
+  overflow: hidden;
+  min-height: 250px;
+  background: #f1f5f9;
+}
+
+.vases {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.caption {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #1e293b;
+}
+
+.caption p {
+  margin: 0;
+  color: #22c55e;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.caption h2 {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.caption a {
+  font-size: 14px;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+}
+.caption a:hover {
+  text-decoration: underline;
+}
+
+/* desktop */
+@media (min-width: 768px) {
+  .wrap {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: 520px;
+  }
+
+  .vase-right {
+    grid-template-rows: 1fr 1fr;
+  }
+
+  .vase-right > div {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .box {
+    min-height: 0;
+  }
+}
+/* tablet (768px to 1024px)  */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .wrap {
+    padding: 64px 32px;
+    grid-template-rows: 420px;
+  }
+
+  .caption {
+    top: 18px;
+    left: 18px;
+  }
+
+  .caption h2 {
+    font-size: 20px;
+  }
+}
+
+/*  phones */
+@media (max-width: 767px) {
+  .wrap {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    padding: 40px 16px;
+    gap: 12px;
+  }
+
+  .vase-left,
+  .vase-right,
+  .vase-right > div {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    gap: 12px;
+  }
+
+  .box {
+    height: 260px;
+    min-height: 0;
+  }
+
+  .vase-left .box {
+    height: 340px;
+  }
+
+  .caption {
+    top: 16px;
+    left: 16px;
+  }
+
+  .caption h2 {
+    font-size: 20px;
+  }
+
+  .caption p,
+  .caption a {
+    font-size: 13px;
+  }
+}

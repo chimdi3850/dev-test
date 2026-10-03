@@ -1,0 +1,91 @@
+.utensils {
+  background-image: url("../assets/images/utensils.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: clamp(48px, 8vw, 80px) clamp(20px, 5vw, 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(360px, 45vw, 500px);
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.utensils .content {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.utensils .content h6 {
+  color: #23A6F0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(13px, 1.4vw, 14px);
+  line-height: 24px;
+  letter-spacing: 0.2px;
+  margin: 0 0 12px;
+}
+
+.utensils .content h3 {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: clamp(20px, 3vw, 25px);
+  line-height: 1.4;
+  margin: 0 0 12px;
+}
+
+.utensils .content p {
+  font-size: clamp(14px, 1.6vw, 15px);
+  color: #737373;
+  line-height: 1.6;
+  margin: 0 0 20px;
+}
+
+.utensils .content span {
+  display: block;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #23856D;
+  margin: 0 0 20px;
+}
+
+.utensils .to-action {
+  background: #23A6F0;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.5px;
+  border: none;
+  padding: 16px 32px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin: 20px auto;
+}
+
+/*  tablet and below */
+@media (max-width: 768px) {
+  .utensils .content br {
+    display: none;
+  }
+}
+
+/* small tablet / large phone*/
+@media (max-width: 768px) {
+  .utensils .content br {
+    display: none;
+  }
+}
+
+/*  phones  */
+@media (max-width: 480px) {
+  .utensils .to-action {
+    width: 100%;
+    max-width: 320px;
+    padding: 14px 20px;
+  }
+}

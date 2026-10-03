@@ -1,0 +1,189 @@
+.bondage{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 60px;
+    border-bottom: 1px solid #d8d5cd;
+}
+.bondage h3{
+    width: 236px;
+    height: 58px;
+   font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+.bondage > .icon {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.bondage .icon img {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(190deg) brightness(97%) contrast(101%);
+}
+.information{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 40px 0;
+}
+.com-content,
+.legal-content,
+.feat-content,
+.resouc-content {
+    flex: 1 1 140px;
+    min-width: 140px;
+}
+.information h4 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 18px;
+}
+.section{
+   list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.information ul.section li {
+    font-size: 14px;
+    color: #4a4a5a;
+    margin-bottom: 14px;
+    cursor: pointer;
+}
+.information ul.section li:hover {
+    color: #2f80ed;
+}
+.box-info {
+    flex: 1 1 260px;
+    min-width: 260px;
+}
+.box-info h5 {
+    font-size: 15px;
+    font-weight: 700;
+    margin: 0 0 18px;
+}
+.box-info form{
+    display: flex;
+    align-items: stretch;
+}
+.box-info .email-input{
+    flex: 0.5;
+    padding: 10px 14px;
+    border: 1px solid #d8d5cd;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 13px;
+    background-color: #fff;
+    outline: none;
+}
+.box-info .email-input::placeholder {
+    color: rgb(0, 0, 0);
+}
+.box-info .subscription {
+    padding: 12px 20px;
+    background-color: #2f80ed;
+    color: #fff;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+}
+.box-info .subscription:hover {
+    background-color: #2568c4;
+}
+ .box-info h6 {
+    font-size: 12px;
+    font-weight: 400;
+    color: #9a9aa5;
+    margin: 14px 0 0;
+ }
+ .last{
+    border-top: 1px solid #d8d5cd;
+    padding: 24px 60px 0;
+    text-align: left;
+ }
+ .last h5 {
+    font-size: 13px;
+    margin: 0;
+    padding: 0; 
+    font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    color: #6a6a75; 
+}
+@media (max-width: 768px) {
+  .bondage {
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px 24px;
+    text-align: center;
+  }
+
+  .bondage h3 {
+    width: auto;
+    height: auto;
+  }
+
+  .information {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px 24px;
+    gap: 30px;
+  }
+
+  .com-content,
+  .legal-content,
+  .feat-content,
+  .resouc-content,
+  .box-info {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+
+  .box-info form {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .box-info .email-input {
+    flex: 1;
+    border-right: 1px solid #d8d5cd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .box-info .subscription {
+    border-radius: 4px;
+  }
+
+  .last {
+    padding: 24px 24px 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .bondage {
+    padding: 24px 16px;
+  }
+
+  .information {
+    padding: 24px 16px;
+  }
+
+  .last {
+    padding: 20px 16px 0;
+  }
+
+  .last h5 {
+    font-size: 12px;
+  }
+}

@@ -1,0 +1,16 @@
+@import "@cloudflare/kumo/styles/standalone";
+
+@font-face{
+  font-family:  "Montserrat";
+  src: url("./assets/montserrat.ttf") format("truetype");
+  font-style: normal;
+  font-weight: 800;
+  font-display: swap;
+}
+
+@layer base {
+	:root {
+		font-family: "Montserrat", sans-serif;
+    isolation: isolate;
+	}
+}

@@ -1,0 +1,107 @@
+.posts{
+    text-align: center;
+    padding: 50px;
+}
+.posts h5{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 20px;
+    color: #23A6F0;
+}
+.posts h3{
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    color: #252B42;
+}
+.posts-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    gap: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+.post-comm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1 1 280px;
+    max-width: 320px;
+    min-width: 0;
+}
+.post-comm img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.tag{
+    text-transform: capitalize;
+    word-spacing: 8px;
+    color: #737373;
+    font-family: "Montserrat", sans-serif;
+}
+.feel{
+    font-family: "Montserrat", sans-serif; 
+    text-transform: capitalize;
+    color:  #252B42;
+    font-size: 15px;
+    font-weight: lighter;
+}
+.write p{
+    font-family: "Montserrat", sans-serif; 
+    color:  #252B42;
+    font-size: 13px;
+    font-weight: 200;
+    font-weight: bold;
+}
+.comment{
+    color: #737373;
+
+}
+.more {
+    margin-top: auto;
+    padding-top: 12px;
+}
+.arrow{
+    color: rgb(54, 54, 224);
+}
+/* Tablet */
+@media (max-width: 900px) {
+    .posts {
+        padding: 40px 24px;
+    }
+    .posts-list {
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .posts {
+        padding: 30px 16px;
+    }
+    .posts-list {
+        flex-direction: column;
+        align-items: center;
+    }
+    .post-comm {
+        flex: 0 0 auto;
+        width: 100%;
+        max-width: 400px;
+    }
+    .posts h3 {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
