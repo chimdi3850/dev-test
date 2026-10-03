@@ -1,5 +1,5 @@
 import { Phone, Mail} from "lucide-react";
-import  facebook from "../assets/images/facebook.svg";
+import facebook from "../assets/Images/facebook.svg";
 import instagram from '../assets/Images/instagram.svg'
 import youtube from '../assets/Images/youtube.svg'
 import x from '../assets/Images/x.svg'
