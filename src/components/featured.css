@@ -71,7 +71,7 @@
   margin: 0;
   text-align: center;
 }
-/*  tablet and below */
+/*  tablet & below*/
 @media (max-width: 1024px) {
   .blue {
     margin: 10px 24px;

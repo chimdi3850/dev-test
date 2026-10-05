@@ -67,14 +67,14 @@
   margin: 20px auto;
 }
 
-/*  tablet and below */
+/*  table */
 @media (max-width: 768px) {
   .utensils .content br {
     display: none;
   }
 }
 
-/* small tablet / large phone*/
+/* small tablet */
 @media (max-width: 768px) {
   .utensils .content br {
     display: none;

@@ -27,7 +27,6 @@
     padding: 0;
     margin: 0;
 }
-
 .post-comm {
     display: flex;
     flex-direction: column;
@@ -44,7 +43,6 @@
     object-fit: cover;
     display: block;
 }
-
 .tag{
     text-transform: capitalize;
     word-spacing: 8px;
@@ -76,6 +74,7 @@
 .arrow{
     color: rgb(54, 54, 224);
 }
+
 /* Tablet */
 @media (max-width: 900px) {
     .posts {
@@ -86,7 +85,7 @@
     }
 }
 
-/* Mobile */
+/* Phone */
 @media (max-width: 600px) {
     .posts {
         padding: 30px 16px;

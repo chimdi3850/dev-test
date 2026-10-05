@@ -9,7 +9,6 @@
 img {
     object-fit: contain;
 }
-
 .vase-left {
   display: grid;
   min-height: 0;
@@ -31,7 +30,6 @@ img {
   min-height: 250px;
   background: #f1f5f9;
 }
-
 .vases {
   position: absolute;
   inset: 0;
@@ -48,7 +46,6 @@ img {
   gap: 6px;
   color: #1e293b;
 }
-
 .caption p {
   margin: 0;
   color: #22c55e;
@@ -91,7 +88,7 @@ img {
     min-height: 0;
   }
 }
-/* tablet (768px to 1024px)  */
+/* tablet */
 @media (min-width: 768px) and (max-width: 1024px) {
   .categories-grid {
     padding: 64px 32px;
