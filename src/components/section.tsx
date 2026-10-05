@@ -5,7 +5,7 @@ export function CategoriesSection() {
   const {data: categories} = useGetProductCategoryListQuery()
 
   return (
-    <section className="wrap">
+    <section className="categories-grid">
 			<div className="vase-left">
 				<Category category={categories?.[0] ?? ''} />
 			</div>

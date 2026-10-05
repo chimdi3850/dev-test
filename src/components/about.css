@@ -1,17 +1,24 @@
 .about-us {
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   gap: 15px;
   width: 100%;
   padding: 70px 40px;
   text-align: center;
+  box-sizing: border-box;
 }
+
 .left-card,
 .right-card {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
 .left-card h3 {
   margin: 0 0 24px;
   font-family: "Montserrat", sans-serif;
@@ -21,70 +28,67 @@
   letter-spacing: 0.1px;
   text-align: center;
 }
+
 .left-card img,
 .right-card img {
   display: block;
   width: 70%;
+  max-width: 100%;
   height: auto;
   margin: 0 auto;
   object-fit: cover;
   border-radius: 6px;
 }
-.left-card h3{
-    margin: 0 0 24px;
-    font-family: "Montserrat", sans-serif;
-    font-family: Montserrat;
-    font-weight: 700;
-    font-size: 21px;
-    line-height: 32px;
-    letter-spacing: 0.1px;
-    text-align: center;
-    right: 10px;
-}
-.left-card img, .right-card img{
-    display: block;
-    width: 70%;
-    height: auto;
-    margin: 0 auto;
-    object-fit: cover;
-    border-radius: 6px;
-}
-/*  tablet */
+
+/*   Tablet   */
 @media (max-width: 1024px) {
   .about-us {
     padding: 56px 20px;
+    gap: 20px;
   }
 
-  .about-us h3 {
+  .left-card h3 {
     margin-bottom: 32px;
   }
 
-  .about-row {
-    gap: 20px;
+  .left-card img,
+  .right-card img {
+    width: 85%;
   }
 }
 
-/* phones */
-@media (max-width: 640px) {
+/* Small tablet / large phone   */
+@media (max-width: 768px) {
   .about-us {
-    padding: 40px 16px;
-  }
-
-  .about-us h3 {
-    font-size: 18px;
-    line-height: 1.4;
-    margin-bottom: 24px;
-  }
-
-  .about-row {
     flex-direction: column;
-    gap: 24px;
+    gap: 32px;
+    padding: 48px 16px;
   }
 
   .left-card,
   .right-card {
     flex: none;
     width: 100%;
+  }
+
+  .left-card img,
+  .right-card img {
+    width: 100%;
+    max-width: 420px;
+  }
+}
+
+/* Phones (up to 480px)  */
+@media (max-width: 480px) {
+  .about-us {
+    padding: 40px 12px;
+    gap: 24px;
+  }
+
+  .left-card h3 {
+    font-size: 18px;
+    line-height: 1.4;
+    margin-bottom: 24px;
   }
 
   .left-card img,
