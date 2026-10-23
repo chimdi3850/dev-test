@@ -1,4 +1,79 @@
-.categories-grid {
+.vase{
+    display: flex;
+    gap: 10px;
+    height: 100vh;
+    width: 100%;
+    padding: 90px 70px ;
+}
+.left-vase{
+    flex: 1;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    object-fit: contain;
+}
+.right-vase {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.top-vase {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.bottom {
+  flex: 1;
+  display: flex;
+  gap: 12px;
+}
+.bottom-left-vase, .bottom-right-vase {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.iteems{
+  color: green;
+}
+.left-vase img,
+.top-vase img,
+.bottom-left-vase img,
+.bottom-right-vase img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  padding: 1px;
+  box-sizing: border-box;
+}
+.top-vase img {
+  object-fit: cover;
+  object-position: center; 
+}
+.caption {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 2;
+}
+.caption a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.527);
+}
+
+
+
+
+
+
+
+
+
+
+/* .categories-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 12px;
@@ -68,88 +143,4 @@ img {
 .caption a:hover {
   text-decoration: underline;
 }
-
-/* desktop */
-@media (min-width: 768px) {
-  .categories-grid {
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 520px;
-  }
-
-  .vase-right {
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .vase-right > div {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .box {
-    min-height: 0;
-  }
-}
-/* tablet */
-@media (min-width: 768px) and (max-width: 1024px) {
-  .categories-grid {
-    padding: 64px 32px;
-    grid-template-rows: 420px;
-  }
-
-  .caption {
-    top: 18px;
-    left: 18px;
-  }
-
-  .caption h2 {
-    font-size: 20px;
-  }
-}
-
-/*  phones */
-@media (max-width: 767px) {
-  .categories-grid {
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    padding: 40px 16px;
-    gap: 12px;
-  }
-
-  .categories-grid > *,
-  .categories-grid .box {
-    width: 100%;
-    min-width: 0;
-    box-sizing: border-box;
-  }
-
-  .vase-left,
-  .vase-right,
-  .vase-right > div {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows: none;
-    gap: 12px;
-  }
-
-  .box {
-    height: 260px;
-    min-height: 0;
-  }
-
-  .vase-left .box {
-    height: 340px;
-  }
-
-  .caption {
-    top: 16px;
-    left: 16px;
-  }
-
-  .caption h2 {
-    font-size: 20px;
-  }
-
-  .caption p,
-  .caption a {
-    font-size: 13px;
-  }
-}
+ */

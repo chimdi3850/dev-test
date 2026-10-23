@@ -1,5 +1,6 @@
-import type { ProductInCart } from './types'
+import type { ProductInCart, LikePost } from './types'
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
+
 
 const initialState: ProductInCart[] = []
 
@@ -24,6 +25,34 @@ export const cartSlice = createSlice({
         emptyCart: () => initialState,
     }
 })
-export const { addToCart, removeFromCart, emptyCart } = cartSlice.actions
 
-export default cartSlice.reducer
+const likeInitialState: LikePost[] = []
+
+export const likeSlice = createSlice({
+    name: 'likes',
+    initialState: likeInitialState,
+    reducers: {
+        like: (state, action: PayloadAction<{id: string}>) => {
+            const like = action.payload
+            const existingLike = state.find((heart) => heart.id === like.id)
+
+            if (existingLike){
+                existingLike.like = !existingLike.like
+            } else{
+                state.push({...like, like: true})
+            }
+        }
+    }
+})
+// export const likePost = createLike({
+//     name: "heart",
+//     initialState,
+//     liking:{
+//         like: (state, action:  PayloadAction<string>) =>{
+//             const {
+//                 id = string,
+//                 like = true,
+//     } 
+// })
+export const { addToCart, removeFromCart, emptyCart } = cartSlice.actions
+export const{like} = likeSlice.actions

@@ -10,6 +10,10 @@ export function Header(){
     const itemCount = useSelector((state: RootState) =>
         state.cart.reduce((total, item) => total + item.numberChosen, 0)
     )
+    const likeCount = useSelector((state: RootState) =>
+        state.likes.length
+    )
+
 
     return (
         <header>
@@ -33,7 +37,9 @@ export function Header(){
 			<Button variant="ghost" icon={ShoppingCart} aria-label={`Shopping cart, ${itemCount} items`}>
                 {itemCount}
             </Button>
-				<Button variant="ghost" icon={Heart} />
+				<Button variant="ghost" icon={Heart}  aria-label={`like, ${likeCount} likes`}>
+                    {likeCount}
+                </Button>
                 <MobileNav />
             </div>
         </header>

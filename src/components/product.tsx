@@ -6,7 +6,7 @@ import {Dialog, DialogTitle, DialogTrigger, DialogDescription, DialogRoot} from 
 import { Heart, Minus, Plus, ShoppingCartPlus, Star, StarHalf } from "lucide-react";
 import {Button} from '@cloudflare/kumo/components/button'
 import {useState} from 'react'
-import {addToCart} from '../lib/cart'
+import {addToCart, like} from '../lib/cart'
 import { useDispatch } from 'react-redux'
 import type { AppDispatch } from '../lib/store'
 
@@ -54,10 +54,8 @@ function ProductCard({product}: {product: Product}) {
 
 function ProductCardDialog({product}: {product:  Product}) {
     const dispatch = useDispatch<AppDispatch>()
-    const [showInput, setShowInput] = useState(false)
     const [numberToPurchase, setNumberToPurchase] = useState(1)
     const [open, setOpen] = useState(false)
-
     const {data} = useGetProductByIdQuery(product.id)
     const isOutOfStock = (data?.stock ?? 0) < 15
     return (
@@ -76,7 +74,9 @@ function ProductCardDialog({product}: {product:  Product}) {
                         </div>)}
                         <div className="data-wrapper">
                         <img src={data?.thumbnail} alt={data?.title }  className="data-pic"/>
-                        <Button id="like-button" icon={Heart} variant="outline" disabled={isOutOfStock} />
+                        <Button onClick={() => {
+                            dispatch(like({id: product.id}))
+                        }} id="like-button" icon={Heart} variant="outline" disabled={isOutOfStock} />
                         </div>
                     <DialogTitle className="title">{product.title}</DialogTitle>
                     <DialogDescription className="data-category">
@@ -88,8 +88,6 @@ function ProductCardDialog({product}: {product:  Product}) {
                     <div className="data-rating">{Array.from({length: Math.floor(data?.rating ?? 0)}).map((_, index) => (
                         <Star key={`full-${index}`} fill="currentColor" />
                     ))}{(data?.rating ?? 0) % 1 >= 0.5 && <StarHalf fill="currentColor" />}</div>
-                <Button id='add-to-basket' variant="outline" disabled={isOutOfStock} onClick={() => setShowInput(true)}>Add to basket</Button>
-                {showInput && 
                 <div className="basket-cart">
                     <div id="keep">
                         <Button icon={Plus} variant="ghost" aria-label="Increase quantity" onClick={() => setNumberToPurchase((quantity) => quantity + 1)} />{numberToPurchase}<Button icon={Minus} variant="ghost" aria-label="Decrease quantity" disabled={numberToPurchase <= 1} onClick={() => setNumberToPurchase((quantity) => Math.max(1, quantity - 1))} />
@@ -98,7 +96,7 @@ function ProductCardDialog({product}: {product:  Product}) {
                         dispatch(addToCart({...product, numberChosen: numberToPurchase}))
                         setOpen(false)
                     }} icon={ShoppingCartPlus} className="shopping">Add</Button>
-                    </div>}
+                    </div>
                 </div>
             </Dialog>
         </DialogRoot>

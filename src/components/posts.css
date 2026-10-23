@@ -17,6 +17,12 @@
     letter-spacing: 0.1px;
     color: #252B42;
 }
+.featured-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 .posts-list {
     display: flex;
     flex-direction: row;

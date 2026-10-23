@@ -31,26 +31,30 @@ export interface ProductInCart extends Product {
 
 export type Categories = string[];
 
-export interface Post {
+export interface LikePost {
 	id: string;
-	title: string;
-	body: string;
-	tags: string[];
+	like: boolean;
 }
+// export interface Post {
+// 	id: string;
+// 	title: string;
+// 	body: string;
+// 	tags: string[];
+// }
 
-export interface Posts {
-	posts: Post[]
-	total: number
-	skip: number
-	limit: number
-}
-export interface Comment {
-	id: string;
-	body: string;
-}
-export interface Comments {
-	comment: Comment[]
-	skip: number
-	limit: number
-	total:  number
-}
+// export interface Posts {
+// 	posts: Post[]
+// 	total: number
+// 	skip: number
+// 	limit: number
+// }
+// export interface Comment {
+// 	id: string;
+// 	body: string;
+// }
+// export interface Comments {
+// 	comment: Comment[]
+// 	skip: number
+// 	limit: number
+// 	total:  number
+// }
