@@ -61,10 +61,10 @@ function ProductCardDialog({product}: {product:  Product}) {
     return (
         <DialogRoot open={open} onOpenChange={setOpen}>
             <DialogTrigger render={(triggerProps) => (
-                <div {...triggerProps} className="product-card" aria-label={`View ${product.title}`}>
+                <button {...triggerProps} className="product-card" aria-label={`View ${product.title}`}>
                     <ProductCard product={product} />
                     <h4>{data?.category}</h4>
-                </div>
+                </button>
             )} />
             <Dialog>
                 <div className="dialog-inner">

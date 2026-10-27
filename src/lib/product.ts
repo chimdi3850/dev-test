@@ -1,9 +1,30 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import type {ProductDetail, Products } from "../lib/types"
+import { appToastManager } from "./toast"
+
+const rawBaseQuery = fetchBaseQuery({baseUrl: 'https://dummyjson.com/products'})
+
+const baseQueryWithErrorToast: typeof rawBaseQuery = async (args, api, extraOptions) => {
+    const result = await rawBaseQuery(args, api, extraOptions)
+
+    if (result.error) {
+        const description = "error" in result.error
+            ? result.error.error
+            : `Request failed (${result.error.status})`
+
+        appToastManager.add({
+            title: "Query failed",
+            description,
+            variant: "error",
+        })
+    }
+
+    return result
+}
 
 export const productApi = createApi({
     reducerPath: "productApi", 
-    baseQuery: fetchBaseQuery({baseUrl: 'https://dummyjson.com/products'}),
+    baseQuery: baseQueryWithErrorToast,
     endpoints: (builder) => ({
         getProductById: builder.query<ProductDetail, string>({
             query: (id) => `/${id}`

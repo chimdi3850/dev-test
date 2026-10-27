@@ -1,4 +1,6 @@
-import Bed from '../assets/Images/featured-posts.png'
+import bedRoom from '../assets/Images/bedroom.png'
+import workTop from "../assets/Images/work-top.png"
+import bedSide from "../assets/Images/bedside.png"
 import './posts.css'
 
 export function Posts(){
@@ -9,7 +11,15 @@ export function Posts(){
                 <h3>Featured Posts</h3>
             </div>
               <div className="featured-img">
-                <img src={Bed} alt="" />
+                <div>
+                      <img src={bedRoom} alt="" />
+                </div>
+                <div>
+                    <img src={workTop} alt="" />
+                </div>
+                <div>
+                    <img src={bedSide} alt="" />
+                </div>
               </div>
         </div>
     )

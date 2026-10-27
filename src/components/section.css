@@ -1,43 +1,47 @@
-.vase{
-    display: flex;
-    gap: 10px;
-    height: 100vh;
-    width: 100%;
-    padding: 90px 70px ;
+.vase {
+  display: flex;
+  gap: 10px;
+  height: 100vh;
+  width: 100%;
+  padding: 90px 70px;
+  box-sizing: border-box;
 }
-.left-vase{
-    flex: 1;
-    position: relative;
-    overflow: hidden;
-    border-radius: 6px;
-    object-fit: contain;
+
+.left-vase {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
 }
+
 .right-vase {
   flex: 1;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
+
 .top-vase {
   flex: 1;
   position: relative;
   overflow: hidden;
   border-radius: 6px;
 }
+
 .bottom {
   flex: 1;
   display: flex;
   gap: 12px;
 }
-.bottom-left-vase, .bottom-right-vase {
+
+.bottom-left-vase,
+.bottom-right-vase {
   flex: 1;
   position: relative;
   overflow: hidden;
   border-radius: 6px;
 }
-.iteems{
-  color: green;
-}
+
 .left-vase img,
 .top-vase img,
 .bottom-left-vase img,
@@ -45,28 +49,70 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
-  padding: 1px;
-  box-sizing: border-box;
 }
-.top-vase img {
-  object-fit: cover;
-  object-position: center; 
-}
+
 .caption {
   position: absolute;
   top: 20px;
   left: 20px;
   z-index: 2;
 }
-.caption a{
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.527);
+
+.caption a {
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.527);
 }
 
+.iteems {
+  color: green;
+}
 
+/* Tablet */
+@media (max-width: 1023px) {
+  .vase {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    height: auto;
+    padding: 40px;
+  }
 
+  .right-vase,
+  .bottom {
+    display: contents;
+  }
 
+  .left-vase,
+  .top-vase,
+  .bottom-left-vase,
+  .bottom-right-vase {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .vase {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+  }
+
+  .left-vase,
+  .top-vase,
+  .bottom-left-vase,
+  .bottom-right-vase {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+  }
+
+  .caption h2 {
+    font-size: 18px;
+    margin: 4px 0;
+  }
+}
 
 
 
