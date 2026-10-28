@@ -68,7 +68,7 @@ export function Footer() {
             </div>
 
             <div className="last">
-                <h5>Made With Love By Finland All Right Reserved</h5>
+                <h5>Made With Love By  <br className="mobile-break" />Finland All Right Reserved</h5>
             </div>
         </div>
     )
